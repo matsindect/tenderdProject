@@ -26,4 +26,8 @@ To view the documentation of the APIs, you can click on documentation on the bot
 4. Run the command `docker-compose -f docker-compose.yml up -d`
 5. Open browser and go to http://localhost:3000
 
+# Note
+
+If the server does not start, the change directory into server and manually create and run the docker image using `docker build -t image-name .`  and `docker run --name container-name image-name`
+
 
