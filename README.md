@@ -12,7 +12,7 @@ This is a simplified version of a Fleet Management System that allows users to t
 Using Kafka and zookeeper message queeing, there progect implements a iot gps device simulator.
 This is achieved by calling a google routes API to get geolacation coordinates for a trip from DMCC, UAE to Dubai Airport Freezone, UAE. The Kafka producer then sends each coordinate in five second intervals to a gps_data. The Kafka consumer the consumes the data and broadcasts them to the clients using socketio. This Simulates a moving vehicle on the google map as shown below.
 
-![Image Description](ihttps://raw.githubusercontent.com/matsindect/tenderdProject/main/tenderd.png)
+![Image](https://github.com/matsindect/tenderdProject/assets/52255514/81701572-4257-4996-99a7-06380a2c02f6)
 
 Mongodb is used to save registerd vehicles and maintainance logs.
 
