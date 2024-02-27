@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This is a vihicle tracking system for Tenderd pvt limited",
   "scripts": {
-    "dev": "concurrently -k \"tsc -p ./src/analyticsServer/ -w\" \"nodemon ./dist/analyticsServer/server.js\"",
+    "start": "concurrently -k \"tsc -p ./src/analyticsServer/ -w\" \"nodemon ./dist/analyticsServer/server.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

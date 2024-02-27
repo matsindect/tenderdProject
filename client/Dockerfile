@@ -13,8 +13,11 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Expose the port the app runs on
-EXPOSE 8082
+# Build the React app for production
+RUN npm run build
 
-# Run the Node.js server
-CMD ["npm", "dev"]
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Run the React app
+CMD ["npm", "start"]
