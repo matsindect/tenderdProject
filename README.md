@@ -16,6 +16,8 @@ This is achieved by calling a google routes API to get geolacation coordinates f
 
 Mongodb is used to save registerd vehicles and maintainance logs.
 
+To view the documentation of the APIs, you can click on documentation on the bottom left corner of the dashboard.
+
 # How to install
 
 1. Install docker
