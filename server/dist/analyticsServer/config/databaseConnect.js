@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = __importDefault(require("mongoose"));
+// MongoDB configuration
+const connectDB = async () => {
+    try {
+        await mongoose_1.default.connect('mongodb://localhost:27017/vts_database', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log('Connected to MongoDB');
+    }
+    catch (error) {
+        console.error('Error connecting to MongoDB:', error);
+        process.exit(1); // Exit process with failure
+    }
+};
+exports.default = connectDB;
+//# sourceMappingURL=databaseConnect.js.map
