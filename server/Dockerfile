@@ -1,20 +1,20 @@
-# Use a base image with Node.js pre-installed
-FROM node:14-alpine
+# Use the official Node.js 14 image as a base
+FROM node:16-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if available) to the working directory
+# Copy package.json and package-lock.json (if available)
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies, including concurrently, tsc, and nodemon
+RUN npm install -g concurrently && \
+    npm install -g typescript && \
+    npm install -g nodemon && \
+    npm install
 
-# Copy the rest of the application code to the working directory
+# Copy the rest of the application code
 COPY . .
 
-# Expose the port the app runs on
-EXPOSE 8082
-
-# Run the Node.js server
-CMD ["npm", "dev"]
+# Command to run the concurrent processes
+CMD concurrently -k "tsc -p ./src/analyticsServer/ -w" "nodemon ./dist/analyticsServer/server.js"
