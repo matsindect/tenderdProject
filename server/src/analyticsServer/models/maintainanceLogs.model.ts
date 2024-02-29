@@ -12,7 +12,7 @@ export interface IVehicleMaintenanceRecord extends Document {
     reportOfWorkPerformed: string;
     costs: number;
     notes: string;
-    vehicle:string;
+    vehicle:IVehicleData;
 }
 
 // Define schema for VehicleMaintenanceRecord
